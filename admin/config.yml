@@ -2,14 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
-site_url: /
-display_url: /
+site_url: https://sybiltest.netlify.app
+display_url: https://sybiltest.netlify.app
 logo_url: /logo.svg
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
-
-publish_mode: editorial_workflow
 
 collections:
   - name: "site"
