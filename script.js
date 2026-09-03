@@ -94,7 +94,14 @@ async function loadContent() {
   } catch (_) {}
   document.querySelector('[data-coming-up]').textContent = content.comingUp || '';
   document.querySelector('[data-about]').textContent = content.about || '';
-  if (content.heroImage) document.querySelector('.hero').style.backgroundImage = `url("${content.heroImage}")`;
+  if (content.heroImage) {
+  document.querySelector('.hero').style.backgroundImage =
+    `url("${content.heroImage}")`;
+  }
+  if (content.aboutImage) {
+  document.querySelector('.content-section--photo').style.backgroundImage =
+    `url("${content.aboutImage}")`;
+  }
   renderSocials(content.socials);
   renderSpotify(content.spotifyEmbed);
   renderVideos(content.liveSessions);
