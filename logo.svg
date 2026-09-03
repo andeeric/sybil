@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 395" role="img" aria-labelledby="title">
+  <title>Lady Sybil logo</title>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="4" d="M151 10C89 12 37 70 22 138c-17 76-3 160 45 205 39 37 102 34 156 12 53-22 76-69 76-131 0-78-27-158-75-193-22-16-47-23-73-21Z"/>
+    <path stroke-width="13" d="M190 63c-8 26-28 48-44 69-16 22-34 43-46 68-10 20-17 40-15 58 2 16 12 24 26 20 11-3 18-11 22-22"/>
+    <path stroke-width="13" d="M219 166c-13-8-30-7-41 4-12 12-12 28 2 38 11 8 25 9 36 16 17 10 22 27 13 43-10 18-34 24-53 20-11-2-20-7-28-13"/>
+  </g>
+</svg>

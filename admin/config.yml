@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+site_url: /
+display_url: /
+logo_url: /logo.svg
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - name: "site"
+        label: "Main Site"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - {label: "Coming Up", name: "comingUp", widget: "string"}
+          - {label: "About", name: "about", widget: "text"}
+          - {label: "Spotify Embed URL", name: "spotifyEmbed", widget: "string", hint: "Paste the Spotify embed URL from Spotify's Share > Embed menu."}
+          - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
+          - {label: "About Image", name: "aboutImage", widget: "image", required: false}
+          - label: "Social Links"
+            name: "socials"
+            widget: "object"
+            fields:
+              - {label: "Facebook", name: "facebook", widget: "string", required: false}
+              - {label: "Instagram", name: "instagram", widget: "string", required: false}
+              - {label: "YouTube", name: "youtube", widget: "string", required: false}
+              - {label: "Spotify", name: "spotify", widget: "string", required: false}
+              - {label: "TikTok", name: "tiktok", widget: "string", required: false}
+          - label: "Live Sessions"
+            name: "liveSessions"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "YouTube URL", name: "youtubeUrl", widget: "string", hint: "Use a normal YouTube video URL, e.g. https://www.youtube.com/watch?v=..."}
+
+  - name: "images"
+    label: "Images"
+    folder: "assets/images/library"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Alt Text", name: "alt", widget: "string", required: false}
+      - {label: "Caption", name: "caption", widget: "string", required: false}

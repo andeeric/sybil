@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lady Sybil — folktronica duo based in London, UK.">
+  <title>Lady Sybil</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <main>
+    <section id="home" class="hero">
+      <div class="hero__veil" aria-hidden="true"></div>
+      <header class="site-header">
+        <nav class="socials" aria-label="Social media" data-socials></nav>
+        <button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><i></i><i></i><i></i></button>
+      </header>
+      <div class="hero__content">
+        <img class="logo" src="logo.svg" alt="Lady Sybil">
+        <div class="spotify-player" data-spotify></div>
+      </div>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#coming-up">Coming Up</a>
+        <a href="#live-sessions">Live Sessions</a>
+        <a href="#about">About</a>
+      </nav>
+      <a class="scroll-cue" href="#coming-up" aria-label="Scroll to Coming Up"><span></span></a>
+    </section>
+
+    <section id="coming-up" class="content-section content-section--cream">
+      <div class="section-inner coming-up-inner">
+        <p class="section-kicker">Coming up</p>
+        <h2 data-coming-up></h2>
+      </div>
+    </section>
+
+    <section id="live-sessions" class="content-section content-section--dark">
+      <div class="section-inner">
+        <p class="section-kicker">Watch</p>
+        <h2>Live Sessions</h2>
+        <div class="video-grid" data-live-sessions></div>
+      </div>
+    </section>
+
+    <section id="about" class="content-section content-section--photo">
+      <div class="section-inner about-panel">
+        <p class="section-kicker">About</p>
+        <h2>Lady Sybil</h2>
+        <p class="about-copy" data-about></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">Lady Sybil</div>
+    <div class="footer-contact"><span>Reach out</span><a href="mailto:ladysybilmusic@gmail.com">ladysybilmusic@gmail.com</a></div>
+    <nav class="socials socials--footer" aria-label="Social media" data-socials></nav>
+    <a class="back-top" href="#home">Back to top ↑</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

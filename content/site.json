@@ -1,0 +1,19 @@
+{
+  "comingUp": "LUMA (Live) EP OUT NOW",
+  "about": "Lady Sybil are a folktronica, Swedish-born, duo currently residing in London, UK. The duo’s signature sound is their dynamic shared leading vocals and harmonies, singing about both the dark and the light in the human experience. They are influenced by folk heroes such as Nick Drake, Joni Mitchell and Simon and Garfunkel as well as contemporaries Kate Bush, James Blake, Ben Howard and Bon Iver. Their songs are lyrically inspired by poetry as they explore themes such as mortality, relationships and the human bond with nature. Their soaring arrangements and elaborate melodies create a case in point of what Scandi music can sound like.",
+  "spotifyEmbed": "https://open.spotify.com/embed/artist/3iGPGNApnVJ925NPDJJa29?utm_source=generator&si=bb68451f4af441fb",
+  "heroImage": "/assets/images/hero.jpg",
+  "aboutImage": "",
+  "socials": {
+    "facebook": "https://www.facebook.com/",
+    "instagram": "https://www.instagram.com/",
+    "youtube": "https://www.youtube.com/",
+    "spotify": "https://open.spotify.com/",
+    "tiktok": "https://www.tiktok.com/"
+  },
+  "liveSessions": [
+    {"title":"Live Session 01","description":"","youtubeUrl":"https://www.youtube.com/watch?v=6w1mDlvFWMA"},
+    {"title":"Live Session 02","description":"","youtubeUrl":"https://www.youtube.com/watch?v=6w1mDlvFWMA"},
+    {"title":"Live Session 03","description":"","youtubeUrl":"https://www.youtube.com/watch?v=6w1mDlvFWMA"}
+  ]
+}
