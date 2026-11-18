@@ -152,7 +152,15 @@ async function loadContent() {
     const response = await fetch('content/site.json', {cache:'no-store'});
     if (response.ok) content = {...DEFAULT_CONTENT, ...(await response.json())};
   } catch (_) {}
-  document.querySelector('[data-about]').textContent = content.about || '';
+  const aboutTarget = document.querySelector('[data-about]');
+  if (aboutTarget) {
+    const paragraphs = String(content.about || '').trim().split(/\\n\\s*\\n/).filter(Boolean);
+    aboutTarget.replaceChildren(...paragraphs.map(paragraph => {
+      const p = document.createElement('p');
+      p.textContent = paragraph.trim();
+      return p;
+    }));
+  }
   renderComingUp(content);
   const logo = document.querySelector('[data-logo]');
   if (logo) {
