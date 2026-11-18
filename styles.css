@@ -39,15 +39,15 @@ h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(58px,9vw,126px);
 .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .about-panel{position:relative;z-index:1;max-width:900px;color:#fff}
 .about-copy{max-width:850px;font-size:clamp(18px,2vw,24px);line-height:1.55;margin:0;color:#fff;opacity:.9}
-footer{background:#171a17;color:#d9d3c7;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:28px;padding:34px 7vw;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+footer{background:#171a17;color:#d9d3c7;display:grid;grid-template-columns:1fr auto auto auto;align-items:center;gap:28px;padding:34px 7vw;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
 .footer-brand{justify-self:start}
 .footer-contact{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .footer-contact span{opacity:.6}
 .footer-contact a{text-transform:none;letter-spacing:.02em;font-size:12px;text-decoration:underline;text-underline-offset:3px}
-.socials--footer{position:static;transform:none;justify-self:center;gap:clamp(12px,1.3vw,18px)}
+.socials--footer{position:static;transform:none;justify-self:end;gap:clamp(12px,1.3vw,18px)}
 .socials--footer a{width:clamp(23px,1.8vw,28px);height:clamp(23px,1.8vw,28px)}
 .socials--footer img{width:clamp(18px,1.5vw,23px);height:clamp(18px,1.5vw,23px)}
-.back-top{text-decoration:underline;text-underline-offset:3px}
+.back-top{text-decoration:underline;text-underline-offset:3px;justify-self:end}
 
 @media (max-width:760px){
   .hero{background-position:center center}
@@ -81,3 +81,12 @@ footer{background:#171a17;color:#d9d3c7;display:grid;grid-template-columns:1fr a
 /* CMS-driven video cards */
 .video-card h3 { margin: 1rem 0 .35rem; font-size: 1rem; font-weight: 500; }
 .video-card p { margin: 0; opacity: .75; line-height: 1.6; }
+
+
+/* CMS-controlled Coming Up artwork and media */
+.content-section--coming-up{position:relative;isolation:isolate;background-position:center;background-size:cover;background-repeat:no-repeat}
+.content-section--coming-up::before{content:'';position:absolute;inset:0;background:rgba(241,234,220,.78);z-index:-1}
+.coming-up-inner{position:relative;z-index:1}
+.coming-up-link{display:inline-block;margin:0 0 28px;text-decoration:underline;text-underline-offset:5px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.coming-up-video{margin-top:24px;max-width:900px}
+.coming-up-video[hidden],.coming-up-link[hidden]{display:none}
