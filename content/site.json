@@ -27,5 +27,10 @@
       "description": "",
       "youtubeUrl": "https://www.youtube.com/watch?v=6w1mDlvFWMA"
     }
-  ]
+  ],
+  "comingUpImage": "",
+  "comingUpLink": "",
+  "comingUpLinkLabel": "Find out more",
+  "comingUpVideo": "",
+  "logoImage": "logo.svg"
 }
