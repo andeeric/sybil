@@ -44,7 +44,15 @@ collections:
 
           # About
           - {label: "About Background Image", name: "aboutImage", widget: "image", required: false}
-          - {label: "About Text", name: "about", widget: "text", hint: "Use a blank line between paragraphs."}
+          - label: "About Paragraphs"
+            name: "about"
+            widget: "list"
+            summary: "{{fields.paragraph}}"
+            field:
+              label: "Paragraph"
+              name: "paragraph"
+              widget: "text"
+              required: false
 
           # Footer
           - label: "Social Links"

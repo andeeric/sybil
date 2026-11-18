@@ -154,10 +154,14 @@ async function loadContent() {
   } catch (_) {}
   const aboutTarget = document.querySelector('[data-about]');
   if (aboutTarget) {
-    const paragraphs = String(content.about || '').replace(/\\r\\n?/g, '\\n').trim().split(/\\n[ \\t]*\\n+/).map(paragraph => paragraph.trim()).filter(Boolean);
-    aboutTarget.replaceChildren(...paragraphs.map(paragraph => {
+    // New CMS format is an array of paragraph strings. Also support the old
+    // single text field so existing content remains readable during migration.
+    const paragraphs = Array.isArray(content.about)
+      ? content.about
+      : String(content.about || '').replace(/\\r\\n?/g, '\\n').split(/\\n\\s*\\n/);
+    aboutTarget.replaceChildren(...paragraphs.map(paragraph => String(paragraph).trim()).filter(Boolean).map(paragraph => {
       const p = document.createElement('p');
-      p.textContent = paragraph.trim();
+      p.textContent = paragraph;
       return p;
     }));
   }
