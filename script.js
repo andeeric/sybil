@@ -4,6 +4,7 @@ const DEFAULT_CONTENT = {
   spotifyEmbed: 'https://open.spotify.com/embed/artist/3iGPGNApnVJ925NPDJJa29?utm_source=generator&si=bb68451f4af441fb',
   heroImage: '/assets/images/hero.jpg',
   aboutImage: '/assets/images/hero.jpg',
+  liveSessionsImage: '',
   logoImage: 'logo.svg',
   comingUpImage: '',
   comingUpLink: '',
@@ -152,6 +153,10 @@ async function loadContent() {
   } catch (_) {}
   document.querySelector('[data-about]').textContent = content.about || '';
   renderComingUp(content);
+  const liveSection = document.querySelector('#live-sessions');
+  if (liveSection && content.liveSessionsImage) {
+    liveSection.style.backgroundImage = `url("${content.liveSessionsImage}")`;
+  }
   const logo = document.querySelector('[data-logo]');
   if (logo) logo.src = content.logoImage || 'logo.svg';
   if (content.heroImage) {
