@@ -3,6 +3,12 @@ const DEFAULT_CONTENT = {
   about: 'Lady Sybil are a folktronica, Swedish-born, duo currently residing in London, UK. The duo’s signature sound is their dynamic shared leading vocals and harmonies, singing about both the dark and the light in the human experience. They are influenced by folk heroes such as Nick Drake, Joni Mitchell and Simon and Garfunkel as well as contemporaries Kate Bush, James Blake, Ben Howard and Bon Iver. Their songs are lyrically inspired by poetry as they explore themes such as mortality, relationships and the human bond with nature. Their soaring arrangements and elaborate melodies create a case in point of what Scandi music can sound like.',
   spotifyEmbed: 'https://open.spotify.com/embed/artist/3iGPGNApnVJ925NPDJJa29?utm_source=generator&si=bb68451f4af441fb',
   heroImage: '/assets/images/hero.jpg',
+  aboutImage: '/assets/images/hero.jpg',
+  logoImage: 'logo.svg',
+  comingUpImage: '',
+  comingUpLink: '',
+  comingUpLinkLabel: 'Find out more',
+  comingUpVideo: '',
   socials: {facebook:'https://www.facebook.com/',instagram:'https://www.instagram.com/',youtube:'https://www.youtube.com/',spotify:'https://open.spotify.com/',tiktok:'https://www.tiktok.com/'},
   liveSessions: [
     {title:'Live Session 01', description:'', youtubeUrl:'https://www.youtube.com/watch?v=6w1mDlvFWMA'},
@@ -50,6 +56,58 @@ function renderSpotify(src) {
   target.replaceChildren(iframe);
 }
 
+function renderComingUp(content) {
+  const section = document.querySelector('#coming-up');
+  const title = document.querySelector('[data-coming-up]');
+  const link = document.querySelector('[data-coming-up-link]');
+  const video = document.querySelector('[data-coming-up-video]');
+  if (title) title.textContent = content.comingUp || '';
+
+  if (section && content.comingUpImage) {
+    section.style.backgroundImage = `url("${content.comingUpImage}")`;
+  }
+
+  if (link) {
+    if (content.comingUpLink) {
+      link.href = content.comingUpLink;
+      link.textContent = content.comingUpLinkLabel || 'Find out more';
+      link.hidden = false;
+    } else {
+      link.hidden = true;
+      link.removeAttribute('href');
+    }
+  }
+
+  if (video && content.comingUpVideo) {
+    const id = youtubeId(content.comingUpVideo);
+    if (id) {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}`;
+      iframe.title = 'Coming Up video';
+      iframe.loading = 'lazy';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      video.replaceChildren(iframe);
+      video.hidden = false;
+      if (window.location.protocol === 'file:') {
+        const fallback = document.createElement('div');
+        fallback.className = 'video-local-fallback';
+        const a = document.createElement('a');
+        a.href = `https://www.youtube.com/watch?v=${id}`;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = 'Watch this video on YouTube ↗';
+        fallback.append(a);
+        video.replaceChildren(fallback);
+      }
+    }
+  } else if (video) {
+    video.hidden = true;
+    video.replaceChildren();
+  }
+}
+
 function renderVideos(items) {
   const grid = document.querySelector('[data-live-sessions]');
   if (!grid) return;
@@ -92,8 +150,10 @@ async function loadContent() {
     const response = await fetch('content/site.json', {cache:'no-store'});
     if (response.ok) content = {...DEFAULT_CONTENT, ...(await response.json())};
   } catch (_) {}
-  document.querySelector('[data-coming-up]').textContent = content.comingUp || '';
   document.querySelector('[data-about]').textContent = content.about || '';
+  renderComingUp(content);
+  const logo = document.querySelector('[data-logo]');
+  if (logo) logo.src = content.logoImage || 'logo.svg';
   if (content.heroImage) {
   document.querySelector('.hero').style.backgroundImage =
     `url("${content.heroImage}")`;

@@ -17,7 +17,7 @@
         <button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav"><i></i><i></i><i></i></button>
       </header>
       <div class="hero__content">
-        <img class="logo" src="logo.svg" alt="Lady Sybil">
+        <img class="logo" src="logo.svg" alt="Lady Sybil" data-logo>
         <div class="spotify-player" data-spotify></div>
       </div>
       <nav id="main-nav" class="main-nav" aria-label="Main navigation">
@@ -29,10 +29,12 @@
       <a class="scroll-cue" href="#coming-up" aria-label="Scroll to Coming Up"><span></span></a>
     </section>
 
-    <section id="coming-up" class="content-section content-section--cream">
+    <section id="coming-up" class="content-section content-section--cream content-section--coming-up">
       <div class="section-inner coming-up-inner">
         <p class="section-kicker">Coming up</p>
         <h2 data-coming-up></h2>
+        <a class="coming-up-link" data-coming-up-link hidden target="_blank" rel="noopener noreferrer"></a>
+        <div class="coming-up-video video-wrap" data-coming-up-video hidden></div>
       </div>
     </section>
 
