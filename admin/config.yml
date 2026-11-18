@@ -19,6 +19,11 @@ collections:
         format: "json"
         fields:
           - {label: "Coming Up", name: "comingUp", widget: "string"}
+          - {label: "Coming Up Background Image", name: "comingUpImage", widget: "image", required: false}
+          - {label: "Coming Up Link URL", name: "comingUpLink", widget: "string", required: false, hint: "Optional link for the Coming Up section."}
+          - {label: "Coming Up Link Label", name: "comingUpLinkLabel", widget: "string", required: false, default: "Find out more"}
+          - {label: "Coming Up YouTube Video URL", name: "comingUpVideo", widget: "string", required: false, hint: "Optional YouTube video URL."}
+          - {label: "Logo", name: "logoImage", widget: "image", required: false}
           - {label: "About", name: "about", widget: "text"}
           - {label: "Spotify Embed URL", name: "spotifyEmbed", widget: "string", hint: "Paste the Spotify embed URL from Spotify's Share > Embed menu."}
           - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
