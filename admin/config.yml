@@ -21,6 +21,7 @@ collections:
           # Home / hero
           - {label: "Hero Background Image", name: "heroImage", widget: "image", required: false}
           - {label: "Logo", name: "logoImage", widget: "image", required: false}
+          - {label: "Logo Width (px)", name: "logoWidth", widget: "number", value_type: "int", min: 1, required: false, hint: "Leave empty to use the uploaded image's original width. The image will still scale down to fit smaller screens."}
           - {label: "Spotify Embed URL", name: "spotifyEmbed", widget: "string", hint: "Paste the Spotify embed URL from Spotify's Share > Embed menu."}
 
           # Coming Up
