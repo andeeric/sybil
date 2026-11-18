@@ -158,7 +158,16 @@ async function loadContent() {
     liveSection.style.backgroundImage = `url("${content.liveSessionsImage}")`;
   }
   const logo = document.querySelector('[data-logo]');
-  if (logo) logo.src = content.logoImage || 'logo.svg';
+  if (logo) {
+    logo.src = content.logoImage || 'logo.svg';
+    const configuredLogoWidth = Number(content.logoWidth);
+    if (Number.isFinite(configuredLogoWidth) && configuredLogoWidth > 0) {
+      logo.style.width = `${configuredLogoWidth}px`;
+    } else {
+      // No CMS width means use the image's intrinsic dimensions, constrained only by the viewport.
+      logo.style.removeProperty('width');
+    }
+  }
   if (content.heroImage) {
   document.querySelector('.hero').style.backgroundImage =
     `url("${content.heroImage}")`;
