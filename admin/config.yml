@@ -18,16 +18,35 @@ collections:
         file: "content/site.json"
         format: "json"
         fields:
+          # Home
+          - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
+          - {label: "Logo", name: "logoImage", widget: "image", required: false}
+          - {label: "Logo Width (px)", name: "logoWidth", widget: "number", value_type: "int", min: 1, required: false, hint: "Leave empty to use the uploaded image's intrinsic width. It will scale down to fit smaller screens."}
+          - {label: "Spotify Embed URL", name: "spotifyEmbed", widget: "string", hint: "Paste the Spotify embed URL from Spotify's Share > Embed menu."}
+
+          # Coming Up
           - {label: "Coming Up", name: "comingUp", widget: "string"}
           - {label: "Coming Up Background Image", name: "comingUpImage", widget: "image", required: false}
           - {label: "Coming Up Link URL", name: "comingUpLink", widget: "string", required: false, hint: "Optional link for the Coming Up section."}
           - {label: "Coming Up Link Label", name: "comingUpLinkLabel", widget: "string", required: false, default: "Find out more"}
           - {label: "Coming Up YouTube Video URL", name: "comingUpVideo", widget: "string", required: false, hint: "Optional YouTube video URL."}
-          - {label: "Logo", name: "logoImage", widget: "image", required: false}
+
+          # Live Sessions
+          - {label: "Live Sessions Background Image", name: "liveSessionsImage", widget: "image", required: false}
+          - label: "Live Sessions"
+            name: "liveSessions"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text", required: false}
+              - {label: "YouTube URL", name: "youtubeUrl", widget: "string", hint: "Use a normal YouTube video URL, e.g. https://www.youtube.com/watch?v=..."}
+
+          # About
+          - {label: "About Background Image", name: "aboutImage", widget: "image", required: false}
           - {label: "About", name: "about", widget: "text"}
-          - {label: "Spotify Embed URL", name: "spotifyEmbed", widget: "string", hint: "Paste the Spotify embed URL from Spotify's Share > Embed menu."}
-          - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
-          - {label: "About Image", name: "aboutImage", widget: "image", required: false}
+
+          # Footer
           - label: "Social Links"
             name: "socials"
             widget: "object"
@@ -37,14 +56,6 @@ collections:
               - {label: "YouTube", name: "youtube", widget: "string", required: false}
               - {label: "Spotify", name: "spotify", widget: "string", required: false}
               - {label: "TikTok", name: "tiktok", widget: "string", required: false}
-          - label: "Live Sessions"
-            name: "liveSessions"
-            widget: "list"
-            summary: "{{fields.title}}"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text", required: false}
-              - {label: "YouTube URL", name: "youtubeUrl", widget: "string", hint: "Use a normal YouTube video URL, e.g. https://www.youtube.com/watch?v=..."}
 
   - name: "images"
     label: "Images"

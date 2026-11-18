@@ -4,7 +4,9 @@ const DEFAULT_CONTENT = {
   spotifyEmbed: 'https://open.spotify.com/embed/artist/3iGPGNApnVJ925NPDJJa29?utm_source=generator&si=bb68451f4af441fb',
   heroImage: '/assets/images/hero.jpg',
   aboutImage: '/assets/images/hero.jpg',
+  liveSessionsImage: '',
   logoImage: 'logo.svg',
+  logoWidth: '',
   comingUpImage: '',
   comingUpLink: '',
   comingUpLinkLabel: 'Find out more',
@@ -153,7 +155,15 @@ async function loadContent() {
   document.querySelector('[data-about]').textContent = content.about || '';
   renderComingUp(content);
   const logo = document.querySelector('[data-logo]');
-  if (logo) logo.src = content.logoImage || 'logo.svg';
+  if (logo) {
+    logo.src = content.logoImage || 'logo.svg';
+    const configuredLogoWidth = Number(content.logoWidth);
+    if (content.logoWidth !== '' && content.logoWidth != null && Number.isFinite(configuredLogoWidth) && configuredLogoWidth > 0) {
+      logo.style.width = `${configuredLogoWidth}px`;
+    } else {
+      logo.style.removeProperty('width');
+    }
+  }
   if (content.heroImage) {
   document.querySelector('.hero').style.backgroundImage =
     `url("${content.heroImage}")`;
@@ -164,6 +174,11 @@ async function loadContent() {
   }
   renderSocials(content.socials);
   renderSpotify(content.spotifyEmbed);
+  const liveSection = document.querySelector('#live-sessions');
+  if (liveSection && content.liveSessionsImage) {
+    liveSection.style.backgroundImage = `url("${content.liveSessionsImage}")`;
+    liveSection.classList.add('content-section--live-photo');
+  }
   renderVideos(content.liveSessions);
 }
 
