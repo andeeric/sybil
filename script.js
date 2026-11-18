@@ -156,13 +156,25 @@ async function loadContent() {
   renderComingUp(content);
   const logo = document.querySelector('[data-logo]');
   if (logo) {
-    logo.src = content.logoImage || 'logo.svg';
+    const selectedLogo = content.logoImage || 'logo.svg';
+    const revealLogo = () => logo.classList.add('is-loaded');
+    logo.addEventListener('load', revealLogo, {once:true});
+    logo.addEventListener('error', () => {
+      if (logo.dataset.fallbackTried !== 'true' && selectedLogo !== 'logo.svg') {
+        logo.dataset.fallbackTried = 'true';
+        logo.src = 'logo.svg';
+      }
+    }, {once:true});
+
     const configuredLogoWidth = Number(content.logoWidth);
     if (content.logoWidth !== '' && content.logoWidth != null && Number.isFinite(configuredLogoWidth) && configuredLogoWidth > 0) {
       logo.style.width = `${configuredLogoWidth}px`;
     } else {
       logo.style.removeProperty('width');
     }
+
+    logo.src = selectedLogo;
+    if (logo.complete && logo.naturalWidth > 0) revealLogo();
   }
   if (content.heroImage) {
   document.querySelector('.hero').style.backgroundImage =
