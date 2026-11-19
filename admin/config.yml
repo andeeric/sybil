@@ -21,6 +21,8 @@ collections:
           # Home
           - {label: "Hero Image", name: "heroImage", widget: "image", required: false}
           - {label: "Hero Image (Mobile, optional)", name: "heroImageMobile", widget: "image", required: false, hint: "Optional portrait image for mobile. If empty, the desktop image is used."}
+          - {label: "Hero Mobile Background Size", name: "heroImageMobileSize", widget: "select", options: ["cover", "contain"], default: "cover", required: false, hint: "Cover fills the section and crops; contain shows the full image but may leave empty space."}
+          - {label: "Hero Mobile Background Position", name: "heroImageMobilePosition", widget: "string", default: "center 38%", required: false, hint: "CSS position, e.g. center center, center 30%, or left center."}
           - {label: "Logo", name: "logoImage", widget: "image", required: false}
           - {label: "Logo Width (px)", name: "logoWidth", widget: "number", value_type: "int", min: 1, required: false, hint: "Leave empty to use the uploaded image's intrinsic width. It will scale down to fit smaller screens."}
           - {label: "Spotify Embed URL", name: "spotifyEmbed", widget: "string", hint: "Paste the Spotify embed URL from Spotify's Share > Embed menu."}
@@ -29,6 +31,8 @@ collections:
           - {label: "Coming Up", name: "comingUp", widget: "string"}
           - {label: "Coming Up Background Image", name: "comingUpImage", widget: "image", required: false}
           - {label: "Coming Up Background (Mobile, optional)", name: "comingUpImageMobile", widget: "image", required: false, hint: "Optional portrait image for mobile. If empty, the desktop image is used."}
+          - {label: "Coming Up Mobile Background Size", name: "comingUpImageMobileSize", widget: "select", options: ["cover", "contain"], default: "cover", required: false, hint: "Cover fills the section and crops; contain shows the full image but may leave empty space."}
+          - {label: "Coming Up Mobile Background Position", name: "comingUpImageMobilePosition", widget: "string", default: "center center", required: false, hint: "CSS position, e.g. center center, center 30%, or left center."}
           - {label: "Coming Up Link URL", name: "comingUpLink", widget: "string", required: false, hint: "Optional link for the Coming Up section."}
           - {label: "Coming Up Link Label", name: "comingUpLinkLabel", widget: "string", required: false, default: "Find out more"}
           - {label: "Coming Up YouTube Video URL", name: "comingUpVideo", widget: "string", required: false, hint: "Optional YouTube video URL."}
@@ -36,6 +40,8 @@ collections:
           # Live Sessions
           - {label: "Live Sessions Background Image", name: "liveSessionsImage", widget: "image", required: false}
           - {label: "Live Sessions Background (Mobile, optional)", name: "liveSessionsImageMobile", widget: "image", required: false, hint: "Optional portrait image for mobile. If empty, the desktop image is used."}
+          - {label: "Live Sessions Mobile Background Size", name: "liveSessionsImageMobileSize", widget: "select", options: ["cover", "contain"], default: "cover", required: false, hint: "Cover fills the section and crops; contain shows the full image but may leave empty space."}
+          - {label: "Live Sessions Mobile Background Position", name: "liveSessionsImageMobilePosition", widget: "string", default: "center center", required: false, hint: "CSS position, e.g. center center, center 30%, or left center."}
           - label: "Live Sessions"
             name: "liveSessions"
             widget: "list"
@@ -48,6 +54,8 @@ collections:
           # About
           - {label: "About Background Image", name: "aboutImage", widget: "image", required: false}
           - {label: "About Background (Mobile, optional)", name: "aboutImageMobile", widget: "image", required: false, hint: "Optional portrait image for mobile. If empty, the desktop image is used."}
+          - {label: "About Mobile Background Size", name: "aboutImageMobileSize", widget: "select", options: ["cover", "contain"], default: "cover", required: false, hint: "Cover fills the section and crops; contain shows the full image but may leave empty space."}
+          - {label: "About Mobile Background Position", name: "aboutImageMobilePosition", widget: "string", default: "center center", required: false, hint: "CSS position, e.g. center center, center 30%, or left center."}
           - label: "About Paragraphs"
             name: "about"
             widget: "list"
