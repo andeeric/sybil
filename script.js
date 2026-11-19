@@ -68,6 +68,8 @@ function renderComingUp(content) {
   if (section && content.comingUpImage) {
     section.style.setProperty('--section-bg-desktop', `url("${content.comingUpImage}")`);
     section.style.setProperty('--section-bg-mobile', `url("${content.comingUpImageMobile || content.comingUpImage}")`);
+    section.style.setProperty('--section-bg-mobile-size', content.comingUpImageMobileSize || 'cover');
+    section.style.setProperty('--section-bg-mobile-position', content.comingUpImageMobilePosition || 'center center');
   }
 
   if (link) {
@@ -193,11 +195,15 @@ async function loadContent() {
     const hero = document.querySelector('.hero');
     hero.style.setProperty('--section-bg-desktop', `url("${content.heroImage}")`);
     hero.style.setProperty('--section-bg-mobile', `url("${content.heroImageMobile || content.heroImage}")`);
+    hero.style.setProperty('--section-bg-mobile-size', content.heroImageMobileSize || 'cover');
+    hero.style.setProperty('--section-bg-mobile-position', content.heroImageMobilePosition || 'center 38%');
   }
   if (content.aboutImage) {
     const about = document.querySelector('.content-section--photo');
     about.style.setProperty('--section-bg-desktop', `url("${content.aboutImage}")`);
     about.style.setProperty('--section-bg-mobile', `url("${content.aboutImageMobile || content.aboutImage}")`);
+    about.style.setProperty('--section-bg-mobile-size', content.aboutImageMobileSize || 'cover');
+    about.style.setProperty('--section-bg-mobile-position', content.aboutImageMobilePosition || 'center center');
   }
   renderSocials(content.socials);
   renderSpotify(content.spotifyEmbed);
@@ -205,6 +211,8 @@ async function loadContent() {
   if (liveSection && content.liveSessionsImage) {
     liveSection.style.setProperty('--section-bg-desktop', `url("${content.liveSessionsImage}")`);
     liveSection.style.setProperty('--section-bg-mobile', `url("${content.liveSessionsImageMobile || content.liveSessionsImage}")`);
+    liveSection.style.setProperty('--section-bg-mobile-size', content.liveSessionsImageMobileSize || 'cover');
+    liveSection.style.setProperty('--section-bg-mobile-position', content.liveSessionsImageMobilePosition || 'center center');
     liveSection.classList.add('content-section--live-photo');
   }
   renderVideos(content.liveSessions);
