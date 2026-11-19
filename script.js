@@ -66,7 +66,10 @@ function renderComingUp(content) {
   if (title) title.textContent = content.comingUp || '';
 
   if (section && content.comingUpImage) {
-    section.style.backgroundImage = `url("${content.comingUpImage}")`;
+    section.style.setProperty('--section-bg-desktop', `url("${content.comingUpImage}")`);
+    section.style.setProperty('--section-bg-mobile', `url("${content.comingUpImageMobile || content.comingUpImage}")`);
+    section.style.setProperty('--section-bg-mobile-size', content.comingUpImageMobileSize || 'cover');
+    section.style.setProperty('--section-bg-mobile-position', content.comingUpImageMobilePosition || 'center center');
   }
 
   if (link) {
@@ -189,18 +192,27 @@ async function loadContent() {
     if (logo.complete && logo.naturalWidth > 0) revealLogo();
   }
   if (content.heroImage) {
-  document.querySelector('.hero').style.backgroundImage =
-    `url("${content.heroImage}")`;
+    const hero = document.querySelector('.hero');
+    hero.style.setProperty('--section-bg-desktop', `url("${content.heroImage}")`);
+    hero.style.setProperty('--section-bg-mobile', `url("${content.heroImageMobile || content.heroImage}")`);
+    hero.style.setProperty('--section-bg-mobile-size', content.heroImageMobileSize || 'cover');
+    hero.style.setProperty('--section-bg-mobile-position', content.heroImageMobilePosition || 'center 38%');
   }
   if (content.aboutImage) {
-  document.querySelector('.content-section--photo').style.backgroundImage =
-    `url("${content.aboutImage}")`;
+    const about = document.querySelector('.content-section--photo');
+    about.style.setProperty('--section-bg-desktop', `url("${content.aboutImage}")`);
+    about.style.setProperty('--section-bg-mobile', `url("${content.aboutImageMobile || content.aboutImage}")`);
+    about.style.setProperty('--section-bg-mobile-size', content.aboutImageMobileSize || 'cover');
+    about.style.setProperty('--section-bg-mobile-position', content.aboutImageMobilePosition || 'center center');
   }
   renderSocials(content.socials);
   renderSpotify(content.spotifyEmbed);
   const liveSection = document.querySelector('#live-sessions');
   if (liveSection && content.liveSessionsImage) {
-    liveSection.style.backgroundImage = `url("${content.liveSessionsImage}")`;
+    liveSection.style.setProperty('--section-bg-desktop', `url("${content.liveSessionsImage}")`);
+    liveSection.style.setProperty('--section-bg-mobile', `url("${content.liveSessionsImageMobile || content.liveSessionsImage}")`);
+    liveSection.style.setProperty('--section-bg-mobile-size', content.liveSessionsImageMobileSize || 'cover');
+    liveSection.style.setProperty('--section-bg-mobile-position', content.liveSessionsImageMobilePosition || 'center center');
     liveSection.classList.add('content-section--live-photo');
   }
   renderVideos(content.liveSessions);
