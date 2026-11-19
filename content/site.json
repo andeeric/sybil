@@ -1,13 +1,13 @@
 {
-  "heroImage": "/assets/images/lady-sybil-e6-4.png",
+  "heroImage": "/assets/images/lady-sybil-e6-6.png",
   "logoImage": "/assets/images/lswhite123-1-.png",
   "logoWidth": "",
   "spotifyEmbed": "https://open.spotify.com/embed/artist/3iGPGNApnVJ925NPDJJa29?utm_source=generator&si=bb68451f4af441fb",
-  "comingUp": "LUMA (Live) EP OUT NOW",
-  "comingUpImage": "/assets/images/lady-sybil-e6-6.png",
-  "comingUpLink": "",
-  "comingUpLinkLabel": "Find out more",
-  "comingUpVideo": "",
+  "comingUp": "3AM EP OUT NOW",
+  "comingUpImage": "/assets/images/ls-coverrr.jpg",
+  "comingUpLink": "https://pitchfork.com/reviews/albums/ladysybil-3am/",
+  "comingUpLinkLabel": "A link",
+  "comingUpVideo": "https://youtu.be/_QKDuiG1vtI",
   "liveSessionsImage": "/assets/images/lady-sybil-e6-9.png",
   "liveSessions": [
     {
