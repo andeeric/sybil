@@ -52,10 +52,10 @@ footer{background:#171a17;color:#d9d3c7;display:grid;grid-template-columns:1fr a
 .back-top{justify-self:end;text-decoration:underline;text-underline-offset:3px}
 
 @media (max-width:760px){
-  .hero{background-image:var(--section-bg-mobile, var(--section-bg-desktop, url('wolf-moon-photo.jpg')));background-position:center 38%}
-  .content-section--coming-up{background-image:var(--section-bg-mobile, var(--section-bg-desktop));background-position:center center}
-  .content-section--live-photo{background-image:var(--section-bg-mobile, var(--section-bg-desktop));background-position:center center}
-  .content-section--photo{background-image:var(--section-bg-mobile, var(--section-bg-desktop));background-position:center center}
+  .hero{background-image:var(--section-bg-mobile, var(--section-bg-desktop, url('wolf-moon-photo.jpg')));background-position:var(--section-bg-mobile-position, center 38%);background-size:var(--section-bg-mobile-size, cover)}
+  .content-section--coming-up{background-image:var(--section-bg-mobile, var(--section-bg-desktop));background-position:var(--section-bg-mobile-position, center center);background-size:var(--section-bg-mobile-size, cover)}
+  .content-section--live-photo{background-image:var(--section-bg-mobile, var(--section-bg-desktop));background-position:var(--section-bg-mobile-position, center center);background-size:var(--section-bg-mobile-size, cover)}
+  .content-section--photo{background-image:var(--section-bg-mobile, var(--section-bg-desktop));background-position:var(--section-bg-mobile-position, center center);background-size:var(--section-bg-mobile-size, cover)}
   .site-header{height:72px}
   .socials{top:21px;gap:13px}
   .socials a{width:21px;height:21px}
