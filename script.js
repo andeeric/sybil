@@ -20,11 +20,11 @@ const DEFAULT_CONTENT = {
 };
 
 const ICONS = {
-  facebook:'https://cdn.simpleicons.org/facebook/ffffff',
-  instagram:'https://cdn.simpleicons.org/instagram/ffffff',
-  youtube:'https://cdn.simpleicons.org/youtube/ffffff',
-  spotify:'https://cdn.simpleicons.org/spotify/ffffff',
-  tiktok:'https://cdn.simpleicons.org/tiktok/ffffff'
+  facebook:'/assets/images/social/facebook.svg',
+  instagram:'/assets/images/social/instagram.svg',
+  youtube:'/assets/images/social/youtube.svg',
+  spotify:'/assets/images/social/spotify.svg',
+  tiktok:'/assets/images/social/tiktok.svg'
 };
 
 function youtubeId(url) {
